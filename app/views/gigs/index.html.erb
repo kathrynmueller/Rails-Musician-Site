@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<div class="col-md-12">
+  <h1>All Entered Gigs</h1>
+
+  <% @gigs.each do |gig| %>
+  <div class="card">
+  <h5 class="card-header"><%= gig.date %></h5>
+  <div class="card-body">
+    <h5 class="card-title"><%= gig.gig %></h5>
+    <p class="card-text"><%= gig.info %></p>
+   
+    <a href="<%gig.link %>" class="btn btn-primary"><%= gig.linkname %></a><br>
+    <%= link_to 'Show', gig %> <br>
+<%= link_to 'Edit', edit_gig_path(gig) %><br>
+            <%= link_to 'Destroy', gig, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
+
+        <% end %>
+
+
+    <br>
+
+    <%= link_to 'New Gig', new_gig_path %>
+</div>

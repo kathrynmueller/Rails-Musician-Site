@@ -1,0 +1,21 @@
+<div class="col-md-12">
+  <h1>All Entered Gigs</h1>
+
+  <% @gigs.each do |gig| %>
+  	<div class="card">
+	  <h5 class="card-header"><%= gig.date %></h5>
+	  <div class="card-body">
+	    <h5 class="card-title"><%= gig.gig %></h5>
+	    <p class="card-text"><%= gig.info %></p>
+	   
+	    <a href="<%gig.link %>" class="btn btn-primary"><%= gig.linkname %></a>
+	  </div>
+	</div>
+
+        <% end %>
+
+
+    <br>
+
+    <%= link_to 'New Gig', new_gig_path %>
+</div>
