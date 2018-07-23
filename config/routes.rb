@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :gigs
   root 'home#index'
   get 'bio' => 'home#bio'
@@ -11,6 +12,6 @@ Rails.application.routes.draw do
   get 'press_kit' => 'home#presskit'
 
   get 'new_gig' => 'gigs#new'
-  get 'performances' => 'gigs#performances'
+  get 'performances' => 'gigs#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
